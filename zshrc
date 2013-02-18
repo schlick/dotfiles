@@ -35,3 +35,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
+
+# rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
