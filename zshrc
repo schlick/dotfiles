@@ -36,6 +36,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 
-# rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# https://github.com/sstephenson/rbenv/issues/239#issuecomment-7976802
+if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 
+export PATH="$HOME/.rbenv/bin:$PATH"
