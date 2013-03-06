@@ -3,7 +3,6 @@
 ## Dotfiles
 
 ```zsh
-ln -s $PWD/caprc ~/.caprc
 ln -s $PWD/pryrc ~/.pryrc
 ln -s $PWD/zshrc ~/.zshrc
 ```
