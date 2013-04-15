@@ -8,6 +8,7 @@ alias guard='guard --no-bundler-warning'  # for when guard is not run with bundl
 
 ### My convenience aliases
 alias r='touch tmp/restart.txt'
+alias ri='ri -f ansi'
 alias s='subl'
 
 function cuke {
