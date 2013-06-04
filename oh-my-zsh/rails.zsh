@@ -24,3 +24,12 @@ alias devlog='tail -f log/development.log'
 alias dbm='rake db:migrate'
 alias dbroll='rake db:rollback'
 alias dbtp='rake db:test:prepare'
+
+# My Rails 2.3 additions
+
+alias sc='_rails_command console'
+alias sdb='_rails_command dbconsole'
+alias sg='_rails_command generate'
+alias sgm='_rails_command generate migration'
+alias ss='_rails_command server'
+alias ssd='_rails_command server --debugger'
