@@ -17,9 +17,10 @@ ln -s $PWD/oh-my-zsh/rails.zsh ~/.oh-my-zsh/custom
 ```
 
 
-## Sublime Text 2
+## Sublime Text 3
 
 ```zsh
-ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+mkdir ~/bin/
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
 ln -s $PWD/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User
 ```
