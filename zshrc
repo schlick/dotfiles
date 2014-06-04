@@ -72,3 +72,6 @@ export PATH="/Users/michael/.rbenv/shims:/Users/michael/bin:/usr/bin:/bin:/usr/s
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
