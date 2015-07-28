@@ -3,7 +3,7 @@
 ## Download
 
 ```zsh
-git clone --recursive git://github.com/schlick/dotfiles.git
+git clone --recursive git@github.com:schlick/dotfiles.git
 ```
 
 ## Dotfiles
