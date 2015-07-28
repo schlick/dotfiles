@@ -1,5 +1,11 @@
 # TODO: turn this into a setup.sh
 
+## Download
+
+```zsh
+git clone --recursive git://github.com/schlick/dotfiles.git
+```
+
 ## Dotfiles
 
 ```zsh
