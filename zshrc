@@ -1,7 +1,7 @@
 source $HOME/repos/schlick/dotfiles/antigen/antigen.zsh
 
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
+# Load the oh-my-zsh's library (if needed)
+#antigen use oh-my-zsh
 
 # Plugins
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -11,8 +11,11 @@ antigen bundle schlick/dotfiles oh-my-zsh/git.zsh
 antigen bundle schlick/dotfiles oh-my-zsh/rails.zsh
 
 # TODO: COMPLETION_WAITING_DOTS from oh-my-zsh
+setopt PROMPT_SUBST
 
-# Load the theme.
+# Load the theme and dependencies
+antigen bundle --loc=lib/theme-and-appearance.zsh
+antigen bundle --loc=lib/git.zsh 
 antigen theme juanghurtado
 
 # Tell antigen that you're done.
