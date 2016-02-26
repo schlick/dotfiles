@@ -23,6 +23,16 @@ ln -s $PWD/sublime_text/Espresso\ Soda.tmTheme ~/Library/Application\ Support/Su
 ln -s $PWD/sublime_text/Monokai\ Soda.tmTheme ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 ```
 
+## Terminal
+
+Open ~/Library/Preferences in Finder and delete com.apple.Terminal.plist. Then open console in Sublime:
+
+```python
+os.symlink('/Users/michael/repos/schlick/dotfiles/com.apple.Terminal.plist', '/Users/michael/Library/Preferences/com.apple.Terminal.plist')
+```
+
+Note that any change to Terminal settings, wipes out the symlink.
+
 ## Other
 
 ```zsh
