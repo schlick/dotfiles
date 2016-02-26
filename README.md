@@ -11,6 +11,7 @@ git clone --recursive git@github.com:schlick/dotfiles.git
 ```zsh
 ln -s $PWD/pryrc ~/.pryrc
 ln -s $PWD/zshrc ~/.zshrc
+ln -s $PWD/fonts/Inconsolata-dz.otf ~/Library/Fonts/Inconsolata-dz.otf
 ```
 
 ## Sublime Text 3
