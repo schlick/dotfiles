@@ -14,6 +14,8 @@ compdef _git gba=git-branch
 alias gc='git commit -m'
 compdef _git gc=git-commit
 
+alias gcane='git commit --amend --no-edit'
+
 alias gco='git checkout'
 compdef _git gco=git-checkout
 
