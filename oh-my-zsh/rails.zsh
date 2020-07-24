@@ -1,35 +1,82 @@
 # Based on rails3 plugin
 # I've copied it here so as to keep all rails stuff together
 
-# Rails 3 aliases, backwards-compatible with Rails 2.
-
 function _rails_command () {
-  if [ -e "script/server" ]; then
+  if [ -e "bin/stubs/rails" ]; then
+    bin/stubs/rails $@
+  elif [ -e "bin/rails" ]; then
+    bin/rails $@
+  elif [ -e "script/rails" ]; then
+    ruby script/rails $@
+  elif [ -e "script/server" ]; then
     ruby script/$@
   else
-    ruby script/rails $@
+    command rails $@
   fi
 }
 
-alias rc='_rails_command console'
-alias rdb='_rails_command dbconsole'
-alias rg='_rails_command generate'
-alias rgm='_rails_command generate migration'
-alias rs='_rails_command server'
-alias rsd='_rails_command server --debugger'
+function _rake_command () {
+  if [ -e "bin/stubs/rake" ]; then
+    bin/stubs/rake $@
+  elif [ -e "bin/rake" ]; then
+    bin/rake $@
+  elif type bundle &> /dev/null && ([ -e "Gemfile" ] || [ -e "gems.rb" ]); then
+    bundle exec rake $@
+  else
+    command rake $@
+  fi
+}
+
+alias rails='_rails_command'
+# compdef _rails_command=rails
+
+alias rake='_rake_command'
+# compdef _rake_command=rake
+
 alias devlog='tail -f log/development.log'
+alias prodlog='tail -f log/production.log'
+alias testlog='tail -f log/test.log'
+
+alias -g RED='RAILS_ENV=development'
+alias -g REP='RAILS_ENV=production'
+alias -g RET='RAILS_ENV=test'
+
+# Rails aliases
+alias rc='rails console'
+# alias rcs='rails console --sandbox'
+# alias rd='rails destroy'
+alias rdb='rails dbconsole'
+# alias rgen='rails generate'
+alias rg='rails generate'
+alias rgm='rails generate migration'
+# alias rp='rails plugin'
+# alias ru='rails runner'
+alias rs='rails server'
+# alias rsd='rails server --debugger'
+# alias rsp='rails server --port'
 
 # My additions
+alias be='bundle exec'
 
+# Rake aliases
+# alias rdm='rake db:migrate'
 alias dbm='rake db:migrate'
+# alias rdms='rake db:migrate:status'
+# alias rdr='rake db:rollback'
 alias dbroll='rake db:rollback'
+# alias rdc='rake db:create'
+# alias rds='rake db:seed'
+# alias rdd='rake db:drop'
+# alias rdrs='rake db:reset'
+# alias rdtc='rake db:test:clone'
+# alias rdtp='rake db:test:prepare'
 alias dbtp='rake db:test:prepare'
-
-# My Rails 2.3 additions
-
-alias sc='_rails_command console'
-alias sdb='_rails_command dbconsole'
-alias sg='_rails_command generate'
-alias sgm='_rails_command generate migration'
-alias ss='_rails_command server'
-alias ssd='_rails_command server --debugger'
+# alias rdmtc='rake db:migrate db:test:clone'
+# alias rdsl='rake db:schema:load'
+alias rlc='rake log:clear'
+# alias rn='rake notes'
+alias rr='rake routes'
+# alias rrg='rake routes | grep'
+# alias rt='rake test'
+# alias rmd='rake middleware'
+# alias rsts='rake stats'
