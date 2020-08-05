@@ -11,6 +11,10 @@ alias gb='git branch'
 alias gba='git branch -a'
 # compdef _git gba=git-branch
 
+# git branch delete all gone local branches
+# https://www.erikschierboom.com/2020/02/17/cleaning-up-local-git-branches-deleted-on-a-remote/
+alias gbdag='git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs git branch -D'
+
 alias gc='git commit -m'
 # compdef _git gc=git-commit
 
