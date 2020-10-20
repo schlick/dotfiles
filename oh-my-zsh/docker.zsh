@@ -1,0 +1,7 @@
+alias dcu='docker-compose up'
+alias dcd='docker-compose down'
+alias dcr='docker-compose run --rm app'
+alias dca='docker-compose run --rm app /bin/bash'
+alias dcc='docker-compose run --rm app bundle exec rails c'
+alias dcm='docker-compose run --rm app bundle exec rake db:migrate db:test:prepare'
+alias dcs='docker-compose run --rm app bundle exec rspec'
